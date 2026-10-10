@@ -1,0 +1,431 @@
+/* ============================================================
+   PAYSLIP - LARGE / READABLE VERSION
+   ============================================================ */
+
+.slip-paper {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto 0;
+    padding: 30px 32px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 1px solid #d7d7d7;
+
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.slip-header {
+    text-align: center;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.slip-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.slip-header p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.slip-title {
+    text-align: center;
+    margin: 18px 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   EMPLOYEE INFORMATION
+   ============================================================ */
+
+.slip-info-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    margin: -6px 0 18px;
+    table-layout: fixed;
+}
+
+.slip-info-table td {
+    width: 50%;
+    height: 55px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+
+    vertical-align: middle;
+
+    background: #f7f8f9;
+    border: 1px solid #e1e4e7;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #777;
+    font-size: 10px;
+}
+
+.info-value {
+    display: block;
+
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+
+.slip-section-title {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 12px 0 0;
+    padding: 9px 12px;
+
+    background: #222;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.slip-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.slip-table thead th {
+    padding: 10px 12px;
+
+    background: #fafafa;
+
+    border: 1px solid #d5d5d5;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.slip-table tbody td {
+    padding: 10px 12px;
+
+    border: 1px solid #d5d5d5;
+
+    background: #fff;
+
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.slip-table th:first-child,
+.slip-table td:first-child {
+    width: 70%;
+}
+
+.slip-table th.amount-column,
+.slip-table td.amount-column {
+    width: 30%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.slip-table .total-row td {
+    background: #fafafa;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   NET SALARY
+   ============================================================ */
+
+.slip-net-box {
+    width: 100%;
+    min-height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    margin-top: 22px;
+    padding: 15px 18px;
+
+    border: 1px solid #222;
+    background: #fff;
+}
+
+.net-label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.net-value {
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.slip-footer-note {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   PRINT BUTTON
+   ============================================================ */
+
+.slip-print-bar {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.slip-print-btn {
+    width: 100%;
+    min-height: 38px;
+
+    padding: 9px;
+
+    border: 0;
+
+    background: #087ff5;
+    color: #fff;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.slip-print-btn:hover {
+    background: #066fd4;
+}
+
+
+/* ============================================================
+   PRINT - A4 PORTRAIT
+   ============================================================ */
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 12mm;
+    }
+
+    html,
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+    }
+
+    .no-print,
+    .sidebar,
+    .top-header,
+    header.top-header,
+    nav,
+    footer {
+        display: none !important;
+    }
+
+    .main-content,
+    .content-area {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+    }
+
+    .slip-paper {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        padding: 20px !important;
+
+        border: 1px solid #aaa !important;
+
+        box-shadow: none !important;
+    }
+
+    .slip-header h1 {
+        font-size: 22px !important;
+    }
+
+    .slip-header p {
+        font-size: 11px !important;
+    }
+
+    .slip-title {
+        font-size: 16px !important;
+    }
+
+    .info-label {
+        font-size: 9px !important;
+    }
+
+    .info-value {
+        font-size: 12px !important;
+    }
+
+    .slip-section-title {
+        font-size: 12px !important;
+
+        background: #222 !important;
+        color: #fff !important;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .slip-table thead th {
+        font-size: 10px !important;
+    }
+
+    .slip-table tbody td {
+        font-size: 10px !important;
+        padding: 9px 10px !important;
+    }
+
+    .net-label {
+        font-size: 13px !important;
+    }
+
+    .net-value {
+        font-size: 19px !important;
+    }
+
+    .slip-net-box {
+        page-break-inside: avoid;
+    }
+
+    .slip-table {
+        page-break-inside: avoid;
+    }
+
+    .slip-info-table {
+        page-break-inside: avoid;
+    }
+
+    .slip-footer-note {
+        font-size: 8px !important;
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media screen and (max-width: 650px) {
+
+    .slip-paper {
+        width: calc(100% - 20px);
+        padding: 18px;
+        margin-top: 15px;
+    }
+
+    .slip-header h1 {
+        font-size: 19px;
+    }
+
+    .slip-header p {
+        font-size: 11px;
+    }
+
+    .slip-title {
+        font-size: 15px;
+    }
+
+    .slip-info-table {
+        border-spacing: 3px;
+    }
+
+    .slip-info-table td {
+        height: 48px;
+        padding: 8px;
+    }
+
+    .info-label {
+        font-size: 8px;
+    }
+
+    .info-value {
+        font-size: 10px;
+    }
+
+    .slip-section-title {
+        font-size: 12px;
+    }
+
+    .slip-table thead th,
+    .slip-table tbody td {
+        padding: 8px;
+        font-size: 9px;
+    }
+
+    .slip-net-box {
+        min-height: 55px;
+        padding: 12px;
+    }
+
+    .net-label {
+        font-size: 11px;
+    }
+
+    .net-value {
+        font-size: 16px;
+    }
+}
